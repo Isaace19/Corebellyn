@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://kgn87xa5d06w"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_ojuny"]
+[ext_resource type="Texture2D" uid="uid://y4oh4goiw6uk" path="res://output-onlinepngtools_2.png" id="2_kte1n"]
+[ext_resource type="Texture2D" uid="uid://djlh11edljo3j" path="res://pointer.png" id="3_c18sm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cqi1p"]
+radius = 12.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ojuny")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(73, 70)
+scale = Vector2(2.72222, 1.96667)
+zoom = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(72.5, 70.5)
+scale = Vector2(0.0219727, 0.0249023)
+texture = ExtResource("2_kte1n")
+
+[node name="pointer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(44, 72.625)
+scale = Vector2(0.122641, 0.154)
+texture = ExtResource("3_c18sm")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = 56.0
+offset_top = 38.0
+offset_right = 91.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 8
+value = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(73, 70)
+shape = SubResource("CapsuleShape2D_cqi1p")
